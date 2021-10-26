@@ -42,7 +42,7 @@ class Generation extends Command
     {
            
         $date=date('h:i:s');
-        $filepath = 'export/dev1.csv';
+        $filepath = 'export/dev1'.$date.'.csv';
         $this->directory->create('export');
         $stream = $this->directory->openFile($filepath, 'w+');
         $stream->lock();
