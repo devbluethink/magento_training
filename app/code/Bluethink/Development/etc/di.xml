@@ -1,0 +1,19 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="checkout_custom_shipping_fields" type="Bluethink\Development\Plugin\Checkout\LayoutProcessorPlugin" sortOrder="20" />
+    </type>
+
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="save_to_quote_table" type="Bluethink\Development\Plugin\Quote\Model\SaveToQuote" sortOrder="10" />
+    </type>
+
+     <type name="Magento\Quote\Model\BillingAddressManagement">
+        <plugin name="save-in-billing_quote" type="Bluethink\Development\Plugin\Quote\Model\BillingAddressManagement" sortOrder="20"/>
+    </type>
+
+    <type name="Magento\Checkout\Controller\Sidebar\UpdateItemQty">
+        <plugin name="quantity_update" type="Bluethink\Development\Plugin\DataUpdate" sortOrder="10"/>
+    </type>
+
+</config>
